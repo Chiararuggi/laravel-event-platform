@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(Faker $faker): void
+    public function run(Faker $faker, $user_sum): void
     {
         $newUser = new User();
         $newUser->name = "Pippi";
@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
         $newUser->save();
 
 
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < $user_sum; $i++) {
             $newUser = new User();
             $newUser->name = $faker->name();
             $newUser->email = $faker->email();

@@ -21,8 +21,11 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(UserSeeder::class);
-        $this->call(EventSeeder::class);
+        $user_sum = $this->command->ask("How many users?");
+        $event_sum = $this->command->ask("How many events?");
+
+        $this->call(UserSeeder::class, false, compact("user_sum"));
+        $this->call(EventSeeder::class, false, compact("event_sum", "user_sum"));
         $this->call(TagSeeder::class);
     }
 }

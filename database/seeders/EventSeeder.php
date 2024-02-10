@@ -15,9 +15,9 @@ class EventSeeder extends Seeder
      */
 
 
-    public function run(Faker $faker): void
+    public function run(Faker $faker, $event_sum): void
     {
-        for ($i = 0; $i < 6; $i++) {
+        for ($i = 0; $i < $event_sum; $i++) {
             $newEvent = new Event();
             $newEvent->user_id = $faker->randomElement($this->getUserID());
             $newEvent->name = $faker->sentence(3);
