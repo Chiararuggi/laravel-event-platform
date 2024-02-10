@@ -14,9 +14,6 @@
                 </div>
             @endif
         </div>
-        Name
-        Date
-        Available_tickets
         <div class="row">
             <form action="{{ route('admin.events.store') }}" method="POST">
                 @csrf
